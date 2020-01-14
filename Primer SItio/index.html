@@ -1,0 +1,127 @@
+<!DOCTYPE html> <!-- con esta etiqueta decimos q es html5-->
+<html lang="es">  <!--  Codigo html y lang es un atribito para definir en q lenguaje estara la informacion. -->
+                    <!-- es = español / en = ingles -->
+    <head>
+        <!-- la unica etiqueta q se ve es la del titulo.-->
+
+        
+        <meta charset="UTF-8">   
+        <!-- sirve para utilizar distintos tipos de caracteres/ emoticones entre otros.-->
+        <!-- la etiqueta META no finaliza por q no tiene nada en su interior por eso no se cierra.--> 
+        <!-- para dar mas Informacion-->
+        <meta name="Descripcion" content="Esta es Mi primer PPAgina ">
+        <meta name="Autor" content="DLC">
+        <meta name="Keywords" content="Mi primer pagina"> <!-- para palabras claves q identifiquen la pagina para el buscador. para Mas informacion.-->
+        <!-- Se tiene q dar q elemento va a ser afectado por  -->
+        <!-- A Todas las etiquetas foooter dales el color rojo de fondo.-->
+        <!-- Para identifacar a un id se antepone un # -->
+        <!-- Para identifacar a una clase se antepone un . -->
+
+        <!-- Otra forma de seleccionar es discriminando segun su atributo encerrado entre [] -->
+
+
+        <!-- Como buena practica para darle estilo se crea otro archivo.css, se relacion con la siguiente etiqueta 
+            <link rel="stylesheet" href="nombreDelCss.css">
+        -->
+        <link rel="stylesheet" href="estilos.css">
+        <!--
+        <style> 
+
+            #Navegador{
+                background: salmon;
+            }
+
+            .green{
+                background: rosybrown;
+            }
+            
+            header{
+                background: greenyellow;
+                color : white;
+            }
+                        
+            footer{
+                background: red; 
+            }
+            
+            blockquote[cite]{ 
+                background: cornflowerblue;
+            }
+        </style>
+    -->
+
+        <title> 
+            Titulo de Primera Pagina DLC    
+        </title>
+
+    </head> <!-- titulo y la Barra de Direccion forman parte del "<header>"-->
+    
+    <!-- Entre cada elemento se genera automaticamente se genera un espacio -->
+    <body>
+
+        <div class="agrupar"><!-- generamos una division  -->
+            <header class="cabecera">
+                <h1>Titulo Header</h1>
+            </header>
+    
+            <nav class="menu">
+                <!-- todos los <li> van a conformar una lista ul. -->
+                <ul class="botonMenu">
+                    <li>inicio</li>
+                    <li>ayuda</li>
+                    <li>contacto</li>
+                </ul>
+            </nav>
+    
+            <section class="seccion">
+    
+                <article id="art1">
+                    <hgroup>
+                        <h1>Titulo 1</h1>
+                        <h2>Subtitulo1</h2>
+                    </hgroup>
+                    
+                    <time datetime="12-12-2012">Publicado el 12-12-2012</time>
+                    <img src="logo.jfif" />
+                    <p class="green">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam beatae voluptatibus error nulla. Exercitationem nostrum numquam maiores commodi veritatis dignissimos repellendus, doloremque quasi, facere minus ab placeat debitis beatae at?</p>
+                    
+                    <footer>
+                        Comentarios
+                    </footer>
+                    <a href="http://facebook.com"> mi facebook</a>
+    
+                </article>
+    
+                <article id="art2">
+                    <hgroup>
+                        <h1>Titulo 2</h1>
+                        <h2>Subtitulo1</h2>
+                    </hgroup>
+                    
+                    <time datetime="12-12-2012">Publicado el 12-12-2012</time>
+                    <p class="green">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae repudiandae itaque, tenetur quam esse nesciunt eaque id sed facere quibusdam?</p>
+    
+                    <footer>
+                        Comentarios2
+                    </footer>
+                </article>
+            </section>
+            <!-- Barra de la Derecha  -->
+            <aside class="columnaDerecha">
+                <blockquote>
+                    Lorem ipsum dolor sit.
+                </blockquote>
+    
+                <blockquote cite="www.google.com.ar"> 
+                    Lorem ipsum dolor sit amet.
+                </blockquote> 
+            </aside>
+    
+            <footer class="pieDePagina">
+                Derechos de Autor ƒƒƒƒ.
+            </footer>
+        </div>       
+
+        
+    </body>
+</html>

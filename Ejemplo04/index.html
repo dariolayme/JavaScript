@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Atributos DOM</title>
+    <style>
+        div
+        {
+            width: 200px;
+            height: 200px;
+            display: inline-block;
+            margin-right: 10px;
+            background: burlywood;
+            border: 1px solid black;
+        }
+        .azul{
+            background: blue;
+            border: 1px solid black;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <section id="contenedor">
+        <div class=""></div>
+        <div class=""></div>
+    </section>
+       
+    <script>
+        var elemDivicion = document.createElement("div");
+        var padre = document.getElementById("contenedor"),
+            referencia = document.getElementsByTagName("div")[0];
+
+        //Para cambiar el atributo SetAttribute
+        elemDivicion.setAttribute("class", "azul");
+        //o usando className (recomendado)
+        //elemDivicion.className = "azul";
+        padre.insertBefore(elemDivicion, referencia);
+    </script>
+</body>
+</html>

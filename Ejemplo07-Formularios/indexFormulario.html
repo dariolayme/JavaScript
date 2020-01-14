@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!--get para enviar datos de nuestro sitio web PHP-->
+    <form action="" name="formularioGeneral" method="get" >
+        <input type="text" name="nombre" id="cajaDeEntrada" maxlength="30" placeholder="Ej:Jose" >
+        <br>
+        <!--Radio buttons-->
+        <input type="radio" name="sexo" id="hombre" value="Hombre" >Hombre
+        <input type="radio" name="sexo" id="mujer" value="Mujer" >Mujer
+        <br>
+        <!-- Caja de check -->
+        <input type="checkbox" name="terminos" id="cajaCheck"  >Terminos y Condiciones.
+        <br>
+        <!-- submit tambien es un BOton pero este envia datos especificamente-->
+        <input type="submit" name="boton" id="boton" value="Enviar">
+
+
+    </form>
+
+    <script>
+    (function(){
+        var formul = document.getElementsByName("formularioGeneral")[0],
+            elementos = formul.elements,
+            boton = document.getElementById("boton");
+
+        function validarNombre(e){
+            //el valor del nombre 
+            if(formul.nombre.value == 0){
+                alert("Completa el nombre");
+                //preventDefault(); nos permitira q no se envie el formulario y se corrija el error.
+                e.preventDefault();
+            }
+        }
+
+        function validarRadio(e){
+
+            if(formul.sexo[0].checked || formul.sexo[1].checked){
+            }else{
+                alert("Completa el Sexo.");
+                e.preventDefault();
+            }
+
+        }
+
+        function validarCheckBox(e){
+            if(!(formul.terminos.checked)){
+                alert("Acepta los Terminos");
+                e.preventDefault();
+            }
+        }
+        
+
+        function validar(e){
+            validarNombre(e);
+            validarRadio(e);
+            validarCheckBox(e);
+        } 
+            //queremos q se valide el nombre q no este vacio
+        formul.addEventListener("submit",validar);
+    }()) 
+    </script>
+    
+</body>
+</html>

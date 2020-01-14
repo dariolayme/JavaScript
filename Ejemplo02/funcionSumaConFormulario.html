@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" id="inputIdNumero1">
+
+        <input type="text" id="inputIdNumero2">
+        
+        <!-- Agregamos la funcionalidad al boton con "onclick" -->
+        <input type="button" id="sumar" value="Sumar Inputs" onclick="alert(suma());">
+    </form>
+    <script>
+
+
+        function suma(){
+            //extrae el elemento q tenga el id q se espera.
+            //usamos parseint porq lo q nos da value es una cadena.
+            var num1 = parseInt(document.getElementById("inputIdNumero1").value);
+            var num2 = parseInt(document.getElementById("inputIdNumero2").value);
+
+            return num1 + num2; 
+        }
+    </script>
+
+</body>
+</html>

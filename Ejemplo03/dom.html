@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document Object Model</title>
+</head>
+<body>
+    <h1>Titulo</h1>
+
+    <div id="subtitulo">
+
+    </div>
+
+
+    <p>1.Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore eveniet laboriosam, enim quaerat exercitationem dolore quis recusandae! Velit, rem reprehenderit? Sunt eum explicabo, commodi quod provident voluptatum natus. Fugiat, quas.</p>
+    <p id="segundo">2.Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus quibusdam quae eum ducimus illo quas delectus aspernatur esse amet! Minus reprehenderit possimus sequi commodi quam quo recusandae dignissimos sapiente aspernatur.</p>
+    <p>3. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni pariatur reiciendis sapiente totam numquam aspernatur quis quasi doloribus adipisci blanditiis!</p>
+
+    <!-- Agregamos nodo -->
+    <ol>
+        <li id="primero">Lorem ipsum dolor sit.</li>
+        <li>Lorem ipasd asda asda sum dolor sit.</li>
+    </ol>
+
+    <script>
+        
+        
+        //getElementsByTagName() recibe un tag '<>'
+        //innerHTml se accede a todo el contenido html incluyendo etiquetas/tag <>.
+        var elementosPdeParrafos = document.getElementsByTagName("p");
+        //acceder por el Id es mas usada para trabajar en JS no recomendado para CSS.
+        var segundoParrafo = document.getElementById("segundo");
+        //1-Crear un elemento
+        var elemento = document.createElement("h2");
+        //2-Crear un nodo de texto
+        var contenido = document.createTextNode("Este es un stitulo");
+        //3-añdir el nodo de texto al elemento
+        elemento.appendChild(contenido);
+        //4-Agregar atributos al elemento
+        elemento.setAttribute("align","center");
+        //5-Agregar el elemento al documento
+        document.getElementById("subtitulo").appendChild(elemento); 
+        
+
+        //agregando Elementos
+        //creamos el elemento del tipo <li> y un contenido q va a hacer un nodo de Texto.
+        var elementoAgregar = document.createElement("li"),
+            contenido = document.createTextNode("nuevotext");
+        //le agregamos el contenido al elemento
+        elementoAgregar.appendChild(contenido);
+        //para agrgar al final del body usamos:
+        //document.body.appendChild(contenido);
+        
+        //para agregarlo dentro de la lista usando el parentNode q nos da el nodo padre q contiene dicho nodo/tag hacemos : 
+        var padre = document.getElementsByTagName("li")[0].parentNode,
+            primerElemento = document.getElementsByTagName("li")[0];//el elemento q va a ser como referencia para ponerlo antes con insertBefore
+            
+        //insertamos antes de (elemento a Agregar, elemento de referencia)
+        padre.insertBefore(elementoAgregar, primerElemento);
+        
+        //---------------------- Modificar Nodos del DOM -----------------------
+
+        /*
+        //para modificar un elemento del html
+        //1 accedemos al elemento
+        var priElemento = document.getElementById("primero");
+        //depues lo modificamos sobreescribiendolo. incluso tomando tags
+        //incluso podemos agregarle una clase a un tag.
+        priElemento.innerHTML = "nuevo texto con <i class = 'claseCursiva'>tags</i>";
+        //otra forma sin q reconosca los tags
+        //priElemento.textContent="nuevo texto con <i>tags</i>"
+        */
+
+        //---------------------- Reemplazar Nodos del DOM -----------------------
+        /*
+        var elementoM = document.createElement("li"),
+            contenidoM = document.createTextNode("Modifado .....");
+
+            elementoM.appendChild(contenidoM);
+
+        var father = document.getElementsByTagName("li")[0].parentNode,
+            referencia = document.getElementsByTagName("li")[0];
+            father.replaceChild(elementoM, referencia);
+        */
+
+        //---------------------- ELiminar Nodos del DOM -----------------------
+        var father = document.getElementsByTagName("li")[0].parentNode,
+            referencia = document.getElementsByTagName("li")[1];
+            father.removeChild(referencia);
+        
+
+
+
+    </script>
+</body>
+</html>

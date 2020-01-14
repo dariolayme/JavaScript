@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Modificando Estilos de elementos</title>
+    <style>
+        .thumb{
+            width: 200px;
+            transition: 300ms all ease;
+            /*para q al agrandarse tenga una transicion*/
+        }    
+        .grande{
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <!--Vamos a hacer un boton q agrande y achiq una imagen-->
+
+    <form action="">
+        <input type="button" value="Zoom" onclick="zoom();">
+    </form>
+
+    <img id ="thumb"class= "thumb"src="arcangel.jpg" width ="400" alt="">
+
+    <script>
+        function zoom(){
+            var thumb= document.getElementById("thumb");
+            if(thumb.className == "thumb")
+            {
+                thumb.setAttribute("class","thumb grande");
+
+            }else{
+                thumb.setAttribute("class","thumb");
+            }
+            //className tambien es otra forma
+        }
+    
+    </script>
+</body>
+
+</html>

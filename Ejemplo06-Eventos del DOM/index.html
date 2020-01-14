@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Eventos en DOM</title>
+</head>
+<body>
+    <button id="boton">boton</button>
+    <input type="text" id="cajaDeTexto">
+    <script>
+        (function(){
+            function saludo(e){
+                console.log('oh yeah');
+                e.preventDefault();
+            }
+
+            function saludo2(){
+                alert("sdadadasda2");
+            }
+
+            var entrada = document.getElementById("cajaDeTexto");
+
+            entrada.addEventListener("click", saludo);
+            boton.addEventListener("focus", saludo2);
+            //focus es cuando entramos en un input caja de texto
+            //blur se activa cuando salimos del input
+            //change se activa cuando el input alla tenido un cambio
+
+        }())
+
+    </script>
+
+    
+</body>
+</html>
