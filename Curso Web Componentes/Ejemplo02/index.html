@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Custom Elements</title>
+
+
+</head>
+
+<body>
+    
+
+    <div id="target"></div>
+    <!--Para acceder al template se usa
+        importedNode
+    -->
+
+    
+    <template id="notificacion">
+
+         <!--
+            Y ahora como no forman parte del DOM principal podemos 
+            quitarle su prefijo "error__"
+        -->
+        <link rel="stylesheet" href="error.css">
+        <style src="error.css"></style>
+        <div class="error">
+            <p class="error__icon">
+                <img src="imagen.jpg" alt="Error">
+            </p>
+        
+
+            <div class="error__body">
+                <p><strong class="error__title">
+                    <!--sino se aclara el uso de slot en la implementacion del componente
+                    toma este titulo como por defecto.-->
+                    <slot name="titulo">Error</slot>
+                </strong></p>
+                
+                <slot name="contenido"></slot>
+                <p><button class="error__action">Intentar otra vez</button></p>
+            </div>
+        </div>
+    </template>
+
+    <!--<script src="notificacionElement.js"></script>-->
+    <script src="notElementShadow.js"></script>
+    <!--El uso de atributos tiene una utilidad limitada.
+        el echo de qrer cambiar no solo el titulo sino los 
+        parrafos o imagenes q puedan a llegar a cambiar 
+        necesitamos otra cosa. SHADOW DOM-->
+    <x-noti title="Permiso Denegado" atrib>
+
+        <!--Podemos meter contenido dentro de nuestro componente para eso necesitamos
+            un <slot name = "....">
+        -->
+        <h1 slot="titulo">Titulo por Parametro</h1>
+        <p slot="contenido">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem aut, aspernatur dolores minima debitis officiis alias nemo expedita facere tempora eaque quas enim earum laudantium, ea nisi amet corrupti rem?</p>
+
+    </x-noti>
+</body>
+
+</html>
